@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d03ec4f-983b-41c8-81fc-dc78ee9f0c1e" name="Default" comment="" />
+    <list default="true" id="8d03ec4f-983b-41c8-81fc-dc78ee9f0c1e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/Sirupsen/logrus" afterPath="$PROJECT_DIR$/src/github.com/Sirupsen/logrus" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/boj/redistore" afterPath="$PROJECT_DIR$/src/github.com/boj/redistore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/bradhe/stopwatch" afterPath="$PROJECT_DIR$/src/github.com/bradhe/stopwatch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/garyburd/redigo" afterPath="$PROJECT_DIR$/src/github.com/garyburd/redigo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/gin-gonic/contrib" afterPath="$PROJECT_DIR$/src/github.com/gin-gonic/contrib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/gin-gonic/gin" afterPath="$PROJECT_DIR$/src/github.com/gin-gonic/gin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/go-sql-driver/mysql" afterPath="$PROJECT_DIR$/src/github.com/go-sql-driver/mysql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/golang/protobuf" afterPath="$PROJECT_DIR$/src/github.com/golang/protobuf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/gorilla/context" afterPath="$PROJECT_DIR$/src/github.com/gorilla/context" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/gorilla/mux" afterPath="$PROJECT_DIR$/src/github.com/gorilla/mux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/gorilla/securecookie" afterPath="$PROJECT_DIR$/src/github.com/gorilla/securecookie" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/gorilla/sessions" afterPath="$PROJECT_DIR$/src/github.com/gorilla/sessions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/gorilla/websocket" afterPath="$PROJECT_DIR$/src/github.com/gorilla/websocket" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/jinzhu/gorm" afterPath="$PROJECT_DIR$/src/github.com/jinzhu/gorm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/jinzhu/inflection" afterPath="$PROJECT_DIR$/src/github.com/jinzhu/inflection" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/jinzhu/now" afterPath="$PROJECT_DIR$/src/github.com/jinzhu/now" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/mailgun/mailgun-go" afterPath="$PROJECT_DIR$/src/github.com/mailgun/mailgun-go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/manucorporat/sse" afterPath="$PROJECT_DIR$/src/github.com/manucorporat/sse" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/markbates/goth" afterPath="$PROJECT_DIR$/src/github.com/markbates/goth" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/mattn/go-runewidth" afterPath="$PROJECT_DIR$/src/github.com/mattn/go-runewidth" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/olekukonko/tablewriter" afterPath="$PROJECT_DIR$/src/github.com/olekukonko/tablewriter" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/patrickmn/go-cache" afterPath="$PROJECT_DIR$/src/github.com/patrickmn/go-cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/stripe/stripe-go" afterPath="$PROJECT_DIR$/src/github.com/stripe/stripe-go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/swhitley101/AdScoops-Consolidated" afterPath="$PROJECT_DIR$/src/github.com/swhitley101/AdScoops-Consolidated" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/tools/godep" afterPath="$PROJECT_DIR$/src/github.com/tools/godep" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/github.com/unrolled/render" afterPath="$PROJECT_DIR$/src/github.com/unrolled/render" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/golang.org/x/oauth2" afterPath="$PROJECT_DIR$/src/golang.org/x/oauth2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gopkg.in/go-playground/validator.v8" afterPath="$PROJECT_DIR$/src/gopkg.in/go-playground/validator.v8" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gopkg.in/yaml.v2" afterPath="$PROJECT_DIR$/src/gopkg.in/yaml.v2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="v3.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,11 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="99" column="15" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="15" />
+            <state relative-caret-position="540">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#14#386#0" expanded="true" />
               </folding>
@@ -39,7 +70,7 @@
       <file leaf-file-name="admin.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/vendor/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/admin.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="540">
               <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding>
                 <element signature="e#13#976#0" expanded="true" />
@@ -82,10 +113,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adscoops.stats.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adscoops.stats.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/vendor/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/structs/adscoops.stats.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4057">
+            <state relative-caret-position="18">
               <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding>
                 <element signature="e#17#70#0" expanded="true" />
@@ -146,7 +177,7 @@
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="ROOT_SYNC" value="SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="C:/" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="FORCE_PUSH_ALLOWED" value="true" />
     <push-targets>
       <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="master" target-branch="master" />
@@ -214,8 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,6 +297,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,6 +403,7 @@
       <workItem from="1478894760694" duration="528000" />
       <workItem from="1478972425298" duration="4025000" />
       <workItem from="1478978685623" duration="1378000" />
+      <workItem from="1478991839860" duration="539000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1476705815749</created>
@@ -384,11 +416,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34410000" />
+    <option name="totallyTimeSpent" value="34949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2490392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -495,7 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5372">
           <caret line="326" column="18" selection-start-line="326" selection-start-column="18" selection-end-line="326" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -503,7 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4845">
           <caret line="285" column="9" selection-start-line="285" selection-start-column="9" selection-end-line="285" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -511,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5763">
           <caret line="339" column="26" selection-start-line="339" selection-start-column="23" selection-end-line="339" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -528,7 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="51" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,11 +674,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/structs/adscoops.stats.go">
+    <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/vendor/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/admin.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="540">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <element signature="e#13#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/app/admin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/vendor/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/structs/adscoops.stats.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="e#17#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,40 +732,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/app/admin.go">
+    <entry file="file://$PROJECT_DIR$/src/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/structs/adscoops.stats.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="36">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/vendor/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/admin.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="e#13#976#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="99" column="15" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="15" />
+        <state relative-caret-position="540">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#14#386#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/v3-adscoop-admin-dash-master/vendor/github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/structs/adscoops.stats.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4057">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding>
-            <element signature="e#17#70#0" expanded="true" />
           </folding>
         </state>
       </provider>

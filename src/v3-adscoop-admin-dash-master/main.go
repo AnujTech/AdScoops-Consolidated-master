@@ -24,12 +24,20 @@ func main() {
 	//broadvidadsDB := fmt.Sprintf(os.Getenv("GO_DATABASE_CONN"), "broadvidadserver")
 
 	// added by Anuj
-
+	/*
 	 adscoopsDB := "root:tech@123@/adscoops?parseTime=true"
 	 adscoopsRealtimeDB := "root:tech@123@/adscoops?parseTime=true"
 	 broadvidadsDB := "root:tech@123@/broadvidadserver?parseTime=true"
-
+*/
 	//Setup Adscoops DB connection
+
+
+	broadvidadsDB:="broadvid:broadvid123!!!@tcp(159.203.105.9:3306)/broadvidadserver?parseTime=True"
+
+	adscoopsDB:="root:broadvid123mysql123@tcp(146.148.66.250:3306)/adscoops?parseTime=true"
+
+	adscoopsRealtimeDB:="root:broadvid123mysql123@tcp(146.148.66.250:3306)/adscoops?parseTime=true"
+
 
 	db, err := gorm.Open("mysql", adscoopsDB)
 
