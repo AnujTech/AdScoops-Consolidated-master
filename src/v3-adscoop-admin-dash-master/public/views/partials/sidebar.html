@@ -1,0 +1,100 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <a href="#" class="sidebar-toggle ham-cross" data-toggle="offcanvas" role="button">
+        <span class="nav-sticks"></span>
+    </a>
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="treeview">
+                <a class="head-li" ui-sref="admin.adscoops">
+                    <i class="icon-adscoops"></i> <span>Adscoops</span>
+                    <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a ui-sref="admin.adscoops.clients-viewall">Clients</a></li>
+                    <li><a ui-sref="admin.adscoops.clients-new">New Client</a></li>
+                    <li><a ui-sref="admin.adscoops.campaigns-viewall">Campaigns</a></li>
+                    <li><a ui-sref="admin.adscoops.campaign-groups-viewall">Campaign Groups</a></li>
+                    <li><a ui-sref="admin.adscoops.redirects-viewall">Redirects</a></li>
+                    <li><a ui-sref="admin.adscoops.redirects-new">New Redirect</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="head-li" >
+                    <i class="icon icon-ad"></i>
+                    <span>Broadvid Ads</span>
+                    <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                </a>
+                <ul class="treeview-menu">
+                   <!--  <li><a href="assets/pages/layout/top-nav.html">Ads</a></li>
+                    <li><a href="assets/pages/layout/boxed.html">Embeds</a></li>
+                    <li><a href="assets/pages/layout/fixed.html">Whitelist URL Groups</a></li>
+                    <li><a href="assets/pages/layout/collapsed-sidebar.html">Blacklist URL Groups</a></li>
+                    <li><a href="assets/pages/layout/collapsed-sidebar.html">Whitelist UA Groups</a></li>
+                    <li><a href="assets/pages/layout/collapsed-sidebar.html">Whitelist Country Groups</a></li>
+                    <li><a href="assets/pages/layout/collapsed-sidebar.html">Flush Ad Cache</a></li> -->
+					
+					<li class="active"><a ui-sref="admin.broadvidads.ads-viewall">Ads</a></li>
+                    <li><a ui-sref="admin.broadvidads.embeds-viewall">Embeds</a></li>
+                    <li><a ui-sref="admin.broadvidads.whitelisturlgroups-viewall">Whitelist URL Groups</a></li>
+                    <li><a ui-sref="admin.broadvidads.blacklisturlgroups-viewall">Blacklist URL Groups</a></li>
+                    <li><a ui-sref="admin.broadvidads.whitelistuagroups-viewall">Whitelist UA Groups</a></li>
+                    <li><a ui-sref="admin.broadvidads.whitelistcountrygroups-viewall">Whitelist Country Groups</a></li>
+                    <li><a ui-sref="admin.broadvidads.flushadcache">Flush Ad Cache</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="head-li" >
+                    <i class="icon icon-video"></i>
+                    <span>Broadvid Videos</span>
+                    <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                </a>
+                <ul class="treeview-menu">
+                   <!--  <li><a href="assets/pages/charts/chartjs.html">RSS</a></li>
+                    <li><a href="assets/pages/charts/morris.html">Embeds</a></li>
+                    <li><a href="assets/pages/charts/flot.html">Redirects</a></li>
+                    <li><a href="assets/pages/charts/inline.html">Inject JS</a></li>
+                    <li><a href="assets/pages/charts/inline.html">Themes</a></li>
+                    <li><a href="assets/charts/inline.html">Domains</a></li> -->
+					
+					<li><a ui-sref="admin.broadvidvideos.rss-viewall">RSS</a></li>
+                    <li><a ui-sref="admin.broadvidvideos.embeds-viewall">Embeds</a></li>
+                    <li><a ui-sref="admin.broadvidvideos.redirects-viewall">Redirects</a></li>
+                    <li><a ui-sref="admin.broadvidvideos.injectjs-viewall">Inject JS</a></li>
+                    <li><a ui-sref="admin.broadvidvideos.themes-viewall">Themes</a></li>
+                    <li><a ui-sref="admin.broadvidvideos.domains-viewall">Domains</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a class="head-li" ui-sref="admin.settings">
+                    <i class="icon-settings"></i>
+                    <span>System Settings</span>
+                    <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+<script>
+    $(document).ready(function () {
+        $('.sidebar-toggle.ham-cross').click(function () {
+            $(this).toggleClass('bg-magic', '');
+            $('span.nav-sticks').toggleClass('cross', '');
+
+        });
+
+        $('#sidebar').css('height',window.innerHeight);
+    });
+</script>

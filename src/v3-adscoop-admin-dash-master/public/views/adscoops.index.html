@@ -1,0 +1,287 @@
+<!--<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">-->
+
+<div class="wrapper" ng-controller="AdscoopsDashboardCtrl">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper clearfix">
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row custom-figures">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box plain-bg ">
+                        <figure class="comm p-red"> <span ng-bind="impressionsBilledPercent"></span>%</figure>
+                        <div class="imp-bill">
+                            <span class="fig"  ng-bind="topStats.Impressions | number">-</span>
+                            <span class="txt">IMPRESSIONS BILLED</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <div class="small-box plain-bg ">
+                        <figure class="comm p-yellow"><span ng-bind="impressionsRequiredPercent"></span>%</figure>
+                        <div class="imp-bill">
+                            <span class="fig" ng-bind=" topStats.Limit | number ">-</span>
+                            <span class="txt">IMPRESSIONS REQUIRED</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box plain-bg ">
+                        <figure class="comm p-blue">$</figure>
+                        <div class="imp-bill">
+                            <span class="fig"><span ng-bind=" topStats.eCPM | number " decimal="2">-</span></span>
+                            <span class="txt">eCPM</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+
+                    <div class="small-box plain-bg rev-bg pr_revenue">
+                        <span class="icon-piggy_bank pr_piggy"></span>
+                        <div class="imp-bill">
+
+                            <span class="fig"><span>$</span><span  ng-bind=" topStats.Revenue | number " decimal="2"></span></span>
+                            <span class="txt pr_txt">REVENUE</span>
+                        </div>
+                    </div>
+
+                    <!-- small box -->
+
+                </div>
+                <!-- ./col -->
+            </div>
+
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row-fluid">
+                <!-- Left col -->
+                <section class="col-lg-11  progrees-bar">
+                    <div class="meter red nostripes">
+                        <span class="pr_end" style="left:calc({{ (dayOfMonth / max) * 100 }}% - 35px)">day <span ng-bind="dayOfMonth"></span></span>
+                        <span style="width:{{ (dayOfMonth / max) * 100 }}%" class="pr_day"></span>
+                    </div>
+
+
+                   <!-- <div style="background:#2078bd;" class="progress-wrap progress" data-progress-percent= "{{ (dayOfMonth / max) * 100 }}">
+					  &lt;!&ndash; <div style="background:red;" class="progress-wrap progress" data-progress-percent= "80"> &ndash;&gt;
+                        <div class="progress-bar progress" max="{{ max }}"></div>
+                    </div>-->
+                </section>
+
+
+
+                <!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                <section class="col-lg-1 time-status">
+                    <span class="fa fa-calendar"></span>
+                    <p><span ng-bind="daysLeft"></span> Days Left</p>
+                </section>
+                <!-- right col -->
+            </div>
+            <div class="row-fluid tb-menu">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs go-tabs">
+                        <li class="active text-center"><a href="#tab_1" data-toggle="tab" aria-expanded="false">REDIRECT IMPRESSIONS</a></li>
+                        <li class="text-center"><a href="#tab_2" data-toggle="tab" aria-expanded="false">REVENUE</a></li>
+                        <li class="text-center"><a href="#tab_3" data-toggle="tab" aria-expanded="false">CLIENT BREAKDOWN</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1">
+
+                            <!--<img class="img-responsive" src="assets/img/img_new/chart.jpg" />-->
+                            <canvas id="line_redir" class="chart chart-line chart-xl" chart-data="realTimeRedir" chart-series="series" chart-labels="realtimeRedirLabels" chart-options="options" chart-colours="options.colors"></canvas>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_2">
+                            <!--<img class="img-responsive chart" src="assets/img/img_new/chart.jpg" />-->
+                            <canvas id="line_rev" class="chart chart-line" chart-data="realTimeRev" chart-series="series" chart-labels="realtimeRedirLabels" chart-options="options" chart-colours="options.colors"></canvas>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_3">
+                            <!--<img class="img-responsive chart" src="assets/img/img_new/chart.jpg" />-->
+                            <div id="clientRevenuePlot" class="chart chart-lg no-margin"></div>
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+            </div>
+            <div class="row-fluid chart-tabs">
+                <div class="col-md-4 text-center">
+                    <div class="clks"><span class="num-icons blue"><i class="icon-clicks"></i></span><span class="relv-txt">CLICKS</span></spanclass></div>
+                    <div class="chart-bars pr_chart">
+                        <!-- <img class="img-responsive" src="assets/img/img_new/
+-bar-chart.png" /> -->
+                        <span id="clicksDataGraph"></span>
+                    </div>
+                    <div class="nums">
+                        <div class="nums-container">
+                            <span class="clks-num"><span class="num-txt">Clicks</span><span class="num-fig" ng-bind="statsVerticals.Clicks.Impressions | number" ></span></span>
+                            <span class="rev-num"><span class="num-txt">Revenue</span><span class="num-fig"><span class="crecy_sy">$</span><span ng-bind="statsVerticals.Clicks.Revenue | number"></span></span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="clks"><span class="num-icons green"><i class="icon-verified"></i></span><span class="relv-txt">VERIFIED</span></div>
+                    <div class="chart-bars pr_chart pr_chart_green">
+                        <!-- <img class="img-responsive" src="assets/img/img_new/Green-bar-charts.png" /> -->
+                          <span id="verificationsDataGraph"></span>
+                    </div>
+                    <div class="nums">
+                        <div class="nums-container">
+                            <span class="clks-num"><span class="num-txt">verified</span><span class="num-fig" ng-bind="statsVerticals.Verification.Impressions | number"></span></span>
+                            <span class="rev-num"><span class="num-txt">Revenue</span><span class="num-fig"><span class="crecy_sy">$</span><span ng-bind="statsVerticals.Verification.Revenue | number">   </span></span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="clks"><span class="num-icons yellow"><i class="icon-load"></i></span><span class="relv-txt">LOADS</span></div>
+                    <div class="chart-bars pr_chart pr_chart_yellow">
+
+                        <!-- <img class="img-responsive" src="assets/img/img_new/yellow-bar-charts.png" /> -->
+                        <span id="loadsDataGraph"></span>
+                    </div>
+                    <div class="nums">
+                        <div class="nums-container">
+                            <span class="clks-num"><span class="num-txt">Clicks</span><span class="num-fig" ng-bind="statsVerticals.Load.Impressions | number"></span></span>
+                            <span class="rev-num"><span class="num-txt">Revenue</span><span class="num-fig"><span class="crecy_sy">$</span><span  ng-bind="statsVerticals.Load.Revenue | number"></span></span></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--*the next div is empty but in use*-->
+            <div class="row-fluid bg">
+            </div>
+            <!--empty div end-->
+            <div class="row-fluid clients">
+                <p>Clients</p>
+            </div>
+			<div ng-repeat="c in clients | orderBy: 'UserSettings.ClientOrder'">
+            <div class="row-fluid client-info">
+                <div class="col-md-4">
+                    <div class="client-name">
+                        <h4 ng-click="clientInfo(c)" ng-bind="c.Name"></h4>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="col-sm-6 col-md-3 c-bars pr_chart-blue " id="impressionsDataByClientCont{{ c.ID }}"><span id="impressionsDataByClient{{ c.ID }}"></span></div>
+                    <div class="col-sm-6 col-md-3 c-bars pr_chart_green" id="engagementsDataByClientCont{{ c.ID }}"><span id="engagementsDataByClient{{ c.ID }}"></span></div>
+                    <div class="col-sm-6 col-md-3 c-bars pr_chart_yellow" id="loadsDataByClientCont{{ c.ID }}"><span id="loadsDataByClient{{ c.ID }}"></span></div>
+                    <div class="col-md-3 c-actions pull-right"><i class="icon-view_small" ui-sref="admin.adscoops.clients-edit.viewcampaigns({id: c.ID })"></i><i class="icon-edit" ui-sref="admin.adscoops.clients-edit({id: c.ID })"></i></div>
+                </div>
+            </div>
+            <div class="row-fluid client-fingures">
+                <div class="col-md-3"><h4 class="go-head">Goal</h4><h3 class="go-nums">{{ c.RequiredImps | number:0 }}</h3></div>
+                <div class="col-md-3"><h4 class="go-head">Remaining</h4><h3 class="go-nums">{{ c.RequiredImps - c.ReceivedImps | number:0 }}</h3></div>
+                <div class="col-md-3"><h4 class="go-head">Today Spent</h4><h3 class="go-nums">${{ c.TodaySpend | number:2 }} </h3></div>
+                <div class="col-md-3"><h4 class="go-head">TOS</h4><h3 class="go-nums">{{ c.TOSAvg | number }}</h3></div>
+            </div>
+            <div class="row-fluid progress-cl">
+
+                <div class="col-md-10 client-progress-bar">
+                    <div class="meter red nostripes narrow">
+					  <span class="pr_end pr_cliente" style="left:calc({{ (c.percentage) * 100  }}% - 0.55px)"> <span>{{ (c.percentage) * 100 | number:0 }}%</span></span>
+                        <span class="pr_animw" style="width:{{ (c.ReceivedImps / c.RequiredImps) * 100 }}%;"
+                              ng-class="{ 'progress-bar-danger': ((c.ReceivedImps / c.RequiredImps) <= .2),
+                                      'progress-bar-warning': ((c.ReceivedImps / c.RequiredImps) > .2 && (c.ReceivedImps / c.RequiredImps) < .6),
+                                    'progress-bar-success': ((c.ReceivedImps / c.RequiredImps) > 1)}"
+
+                        ></span>
+                    </div>
+
+
+                   <!-- <div class="progress-wrap progress" data-progress-percent="width:{{ (c.ReceivedImps / c.RequiredImps) * 100 }}">
+                        <div class="progress-b ar progress" ng-class="{ 'progress-bar-danger': ((c.ReceivedImps / c.RequiredImps) <= .2),
+                                      'progress-bar-warning': ((c.ReceivedImps / c.RequiredImps) > .2 && (c.ReceivedImps / c.RequiredImps) < .6),
+                                    'progress-bar-success': ((c.ReceivedImps / c.RequiredImps) > 1)}"></div>
+                    </div>-->
+                </div>
+                <div class="col-md-2"><a class="action-go" ui-sref="admin.clientdetails({id: c.ID })"><span class="prog-action">Detail <i class="icon-next_grey_icon"></i></span></a></div>
+            </div>
+			</div>
+
+            <!-- <div class="row-fluid client-info">
+                <div class="col-md-4">
+                    <div class="client-name">
+                        <h4>Daniel Aharonoff [Broadvid]</h4>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="col-sm-6 col-md-3 c-bars"><img class="img-responsive" src="assets/img/img_new/blue-bar-chart.png" /></div>
+                    <div class="col-sm-6 col-md-3 c-bars"><img class="img-responsive" src="assets/img/img_new/Green-bar-charts.png" /></div>
+                    <div class="col-sm-6 col-md-3 c-bars"><img class="img-responsive" src="assets/img/img_new/yellow-bar-charts.png" /></div>
+                    <div class="col-md-3 c-actions"><i class="icon-view_small"></i><i class="icon-edit"></i></div>
+                </div>
+            </div> -->
+            <!-- <div class="row-fluid client-fingures">
+                <div class="col-md-3"><h4 class="go-head">Goal</h4><h3 class="go-nums">7,456,567,234</h3></div>
+                <div class="col-md-3"><h4 class="go-head">Remaining</h4><h3 class="go-nums">6,456,567,234</h3></div>
+                <div class="col-md-3"><h4 class="go-head">Today Spent</h4><h3 class="go-nums">$0.00</h3></div>
+                <div class="col-md-3"><h4 class="go-head">TOS</h4><h3 class="go-nums">215</h3></div>
+            </div> -->
+            <!-- <div class="row-fluid progress-cl">
+                <div class="col-md-10 client-progress-bar">
+                    <div class="progress-wrap progress" data-progress-percent="80">
+                        <div class="progress-bar progress"></div>
+                    </div>
+                </div>
+                <div class="col-md-2"><a class="action-go" href="#"><span class="prog-action">Detail <i class="icon-next_grey_icon"></i></span></a></div>
+            </div> -->
+			
+
+        </section>
+
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <div ui-view></div>
+</div>
+<!-- ./wrapper -->
+<!-- jQuery 2.2.3 -->
+<!--<script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+&lt;!&ndash; jQuery UI 1.11.4 &ndash;&gt;
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!--<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>-->
+<!-- Bootstrap 3.3.6 -->
+<!--<script src="assets/bootstrap/js/bootstrap.min.js"></script>-->
+
+<script>
+    $(document).ready(function () {
+
+
+
+        moveProgressBar();
+
+        $(window).resize(function () {
+            moveProgressBar();
+        });
+
+
+        function moveProgressBar() {
+            console.log("moveProgressBar");
+            var getPercent = ($('.progress-wrap').data('progress-percent') / 100);
+            var getProgressWrapWidth = $('.progress-wrap').width();
+            var progressTotal = getPercent * getProgressWrapWidth;
+            var animationLength = 2500;
+            $('.progress-bar').stop().animate({
+                left: progressTotal
+            }, animationLength);
+        }
+
+
+    });
+</script>
+

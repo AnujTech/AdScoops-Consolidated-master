@@ -1,0 +1,218 @@
+﻿
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <ul class="nav nav-tabs go-tabs clients-tabs">
+                <li class="active text-center"><a href="#tab_1" data-toggle="tab" aria-expanded="false">ADD NEW CLIENT</a></li>
+                <li class="text-center"><a href="#tab_2" data-toggle="tab" aria-expanded="false">VIEW ALL CLIENTS</a></li>
+            </ul>
+            <section class="content">
+                <div class="row-fluid tb-menu">
+                    <div class="nav-tabs-custom">
+                        <div class="tab-content clt-tabs">
+                            <div class="tab-pane active" id="tab_1">
+                                <div class="form-container">
+                                    <div class="section section-label">
+                                        <form>
+                                            <div class="col-md-12">
+                                                <fieldset>
+                                                    <input id="firstName" name="firstName" type="text" autocomplete="off" required />
+                                                    <label for="ClientName">Client Name</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <fieldset>
+                                                    <input id="lastName" name="lastName" type="text" autocomplete="off" required />
+                                                    <label for="DailyImpsLimit">Daily Imps Limit</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <fieldset>
+                                                    <input id="email" name="email" type="text" autocomplete="off" required />
+                                                    <label for="DefaultCPC">Default CPC</label>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <fieldset>
+                                                    <input id="firstName" name="firstName" type="text" autocomplete="off" required />
+                                                    <label for="email">Emails</label>
+                                                </fieldset>
+                                                <p><i class="icon-info_icon"></i> Enter one email per line to add or re-enable.<span class="add-same"><a href="javascript:void(0)" class="add-dwn">Add Another<i class="icon icon-add_dark"></i></a></span></p>
+
+                                            </div>
+                                            <div class="col-md-12">
+                                                <fieldset>
+                                                    <input id="firstName" name="firstName" type="text" autocomplete="off" required />
+                                                    <label for="email">E-mails for campaign auto-pause</label>
+                                                </fieldset>
+                                                <p><i class="icon-info_icon"></i>Enter one email per line to add or re-enable.<span class="add-same"><a href="javascript:void(0)" class="add-dwn">Add Another<i class="icon icon-add_dark"></i></a></span></p>
+
+                                            </div>
+                                            <div class="m-select-parent">
+                                                <div class="col-md-6">
+                                                    <div class="m-select">
+                                                        <div class="form-group">
+                                                            <label>
+                                                                <input type="checkbox" value="Apple" />
+                                                                <span class="circle"><i class="icon-tick"></i></span>
+                                                                <span class="select-option">Paused?</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>
+                                                                <input type="checkbox" value="Apple" />
+                                                                <span class="circle"><i class="icon-tick"></i></span>
+                                                                <span class="select-option">Enable Reporting?</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>
+                                                                <input type="checkbox" value="Apple" />
+                                                                <span class="circle"><i class="icon-tick"></i></span>
+                                                                <span class="select-option">Enable Client Login?</span>
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="m-select">
+                                                        <div class="form-group">
+                                                            <label>
+                                                                <input type="checkbox" value="Apple" />
+                                                                <span class="circle"><i class="icon-tick"></i></span>
+                                                                <span class="select-option">Hide on Dashboard?</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>
+                                                                <input type="checkbox" value="Apple" />
+                                                                <span class="circle"><i class="icon-tick"></i></span>
+                                                                <span class="select-option">Approved to Auto-recharge?</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>
+                                                                <input type="checkbox" value="Apple" />
+                                                                <span class="circle"><i class="icon-tick"></i></span>
+                                                                <span class="select-option">In Good Standing?</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="m-select">
+                                                        <div class="form-group">
+                                                            <label>
+                                                                <input type="checkbox" value="Apple" />
+                                                                <span class="circle"><i class="icon-tick"></i></span>
+                                                                <span class="select-option">Client Submitted Schedules Always Need Approval Before Taking Live?</span>
+                                                            </label>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center"><a href="javascript:voide(0)" class="btn btn-blue btn-save">Save</a></div>
+                            </div>
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="tab_2">
+                                <table class="rwd-table custom-responsive">
+                                    <tr class="col-title">
+                                        <th class="srno">Serial No.</th>
+                                        <th class="clname">Client Name</th>
+                                        <th class="action-cl">Additional Option</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Serial No.">123</td>
+                                        <td data-th="Client Name">Client name</td>
+                                        <td data-th="Additional Option"><a class="btn btn-view"><i class="icon-view_small"></i>View Campaigns</a><a class="btn btn-avl"><i class="icon-available_groups2"></i>Available Groups</a><a class="btn btn-edit"><i class="icon-edit"></i>Edit</a></td>                                       
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Serial No.">123</td>
+                                        <td data-th="Client Name">Client name</td>
+                                        <td data-th="Additional Option"><a class="btn btn-view"><i class="icon-view_small"></i>View Campaigns</a><a class="btn btn-avl"><i class="icon-available_groups2"></i>Available Groups</a><a class="btn btn-edit"><i class="icon-edit"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Serial No.">123</td>
+                                        <td data-th="Client Name">Client name</td>
+                                        <td data-th="Additional Option"><a class="btn btn-view"><i class="icon-view_small"></i>View Campaigns</a><a class="btn btn-avl"><i class="icon-available_groups2"></i>Available Groups</a><a class="btn btn-edit"><i class="icon-edit"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Serial No.">123</td>
+                                        <td data-th="Client Name">Client name</td>
+                                        <td data-th="Additional Option"><a class="btn btn-view"><i class="icon-view_small"></i>View Campaigns</a><a class="btn btn-avl"><i class="icon-available_groups2"></i>Available Groups</a><a class="btn btn-edit"><i class="icon-edit"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Serial No.">123</td>
+                                        <td data-th="Client Name">Client name</td>
+                                        <td data-th="Additional Option"><a class="btn btn-view"><i class="icon-view_small"></i>View Campaigns</a><a class="btn btn-avl"><i class="icon-available_groups2"></i>Available Groups</a><a class="btn btn-edit"><i class="icon-edit"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Serial No.">123</td>
+                                        <td data-th="Client Name">Client name</td>
+                                        <td data-th="Additional Option"><a class="btn btn-view"><i class="icon-view_small"></i>View Campaigns</a><a class="btn btn-avl"><i class="icon-available_groups2"></i>Available Groups</a><a class="btn btn-edit"><i class="icon-edit"></i>Edit</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-th="Serial No.">123</td>
+                                        <td data-th="Client Name">Client name</td>
+                                        <td data-th="Additional Option"><a class="btn btn-view"><i class="icon-view_small"></i>View Campaigns</a><a class="btn btn-avl"><i class="icon-available_groups2"></i>Available Groups</a><a class="btn btn-edit"><i class="icon-edit"></i>Edit</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                        </div>
+                        <!-- /.tab-content -->
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- /.content -->
+        </div>
+       
+    <!-- ./wrapper -->
+    <!-- jQuery 2.2.3 -->
+    <!-- <script src="plugins/jQuery/jquery-2.2.3.min.js"></script> -->
+    <!-- jQuery UI 1.11.4 -->
+    <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script> -->
+    <!-- Bootstrap 3.3.6 -->
+    <!-- <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script> -->
+    <script>
+        $(document).ready(function () {
+            $('.sidebar-toggle.ham-cross').click(function () {
+                $(this).toggleClass('bg-magic', '');
+                $('span.nav-sticks').toggleClass('cross', '');
+            });
+
+
+            moveProgressBar();
+
+            $(window).resize(function () {
+                moveProgressBar();
+            });
+
+
+            function moveProgressBar() {
+                console.log("moveProgressBar");
+                var getPercent = ($('.progress-wrap').data('progress-percent') / 100);
+                var getProgressWrapWidth = $('.progress-wrap').width();
+                var progressTotal = getPercent * getProgressWrapWidth;
+                var animationLength = 2500;
+                $('.progress-bar').stop().animate({
+                    left: progressTotal
+                }, animationLength);
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+﻿        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" ng-controller="AdscoopsClientsEditCtrl">
+            <section class="content">
+                <div class="row-fluid tb-menu">
+                    <div class="nav-tabs-custom">
+                        <div class="tab-content clt-tabs">
+                            <div class="col-md-12 eidt-page-head clearfix">
+                                <span class="go-back"><a href="#"><i class="icon-back_icon"></i></a></span>
+                                <span class="cl-name" ng-bind="client.Name"></span>
+                                <span class="save-edited"><a href="javascript:voide(0)" ng-click="saveClient()">Save</a></span>
+                            </div>
+                            <div class="form-container mt-material">
+                                <div class="section section-label">
+                                    <form>
+                                        <div class="col-md-12">
+                                            <fieldset>
+                                                <input id="firstName" name="firstName" type="text" autocomplete="off" ng-model="client.Name" required />
+                                                <label for="ClientName">Client Name</label>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <input id="lastName" name="lastName" type="text" autocomplete="off" ng-model="client.DailyImpsLimit" required />
+                                                <label for="DailyImpsLimit">Daily Imps Limit</label>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <input id="email" name="email" type="text" autocomplete="off" ng-model="client.DefaultCpc" required />
+                                                <label for="DefaultCPC">Default CPC</label>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <fieldset>
+                                                <input id="firstName" name="firstName" type="text" autocomplete="off" required />
+                                                <label for="email">Emails</label>
+                                            </fieldset>
+                                            <p><i class="icon-info_icon"></i> Enter one email per line to add or re-enable.<span class="add-same"><a href="javascript:void(0)" class="add-dwn" ng-click="addEmail()">Add Another<i class="icon icon-add_dark"></i></a></span></p>
+
+                                        </div>
+										<table class="table table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td class="text-right">&nbsp;</td>
+                                                </tr>
+                                            </thead>
+                                    <tbody>
+                                        <tr ng-repeat="e in client.Emails">
+                                            <td ng-bind="e"></td>
+                                            <td class="text-right">
+                                                <button class="btn btn-default btn-xs shiny icon-only danger" ng-click="removeEmail($index);"><i class="fa fa-times"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                        <div class="col-md-12">
+                                            <fieldset>
+                                                <input id="firstName" name="firstName" type="text" autocomplete="off" required />
+                                                <label for="email">E-mails for campaign auto-pause</label>
+                                            </fieldset>
+                                            <p><i class="icon-info_icon"></i>Enter one email per line to add or re-enable.<span class="add-same"><a href="javascript:void(0)" class="add-dwn" ng-click="addCampaignEmail()">Add Another<i class="icon icon-add_dark"></i></a></span></p>
+
+                                        </div>
+										<table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td class="text-right">&nbsp;</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="e in client.CampaignEmails">
+                                                <td ng-bind="e"></td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-default btn-xs shiny icon-only danger" ng-click="removeCampaignEmail($index)"><i class="fa fa-times"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                        <div class="m-select-parent">
+                                            <div class="col-md-6">
+                                                <div class="m-select">
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="checkbox" value="Apple" ng-model="client.Paused" />
+                                                            <span class="circle"><i class="icon-tick"></i></span>
+                                                            <span class="select-option">Paused?</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="checkbox" value="Apple" ng-model="client.EnableReporting" />
+                                                            <span class="circle"><i class="icon-tick"></i></span>
+                                                            <span class="select-option">Enable Reporting?</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="checkbox" value="Apple"  ng-model="client.EnableClientLogin" />
+                                                            <span class="circle"><i class="icon-tick"></i></span>
+                                                            <span class="select-option">Enable Client Login?</span>
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="m-select">
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="checkbox" value="Apple" ng-model="client.HideFromDash" />
+                                                            <span class="circle"><i class="icon-tick"></i></span>
+                                                            <span class="select-option">Hide on Dashboard?</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="checkbox" value="Apple" ng-model="client.ApprovedToCharge" />
+                                                            <span class="circle"><i class="icon-tick"></i></span>
+                                                            <span class="select-option">Approved to Auto-recharge?</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="checkbox" value="Apple"  ng-model="client.InGoodStanding" />
+                                                            <span class="circle"><i class="icon-tick"></i></span>
+                                                            <span class="select-option">In Good Standing?</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="m-select">
+                                                    <div class="form-group">
+                                                        <label>
+                                                            <input type="checkbox" value="Apple" ng-model="client.ClientSchedulesPendApproval" />
+                                                            <span class="circle"><i class="icon-tick"></i></span>
+                                                            <span class="select-option">Client Submitted Schedules Always Need Approval Before Taking Live?</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 charamt" ng-show="client.ID > 0">
+                                <div class="ch-amt">
+                                    <div class="col-md-7">
+                                        <p>Charge Amount</p>
+                                        <div class="form-group change-val">
+                                            <input type="text" value="" ng-model="client.ChargeAmount">
+                                        </div>
+                                    </div>
+									<div class="col-md-5" ng-show="client.StripeToken == ''">
+								
+                                        <a class="btn btn-danger nc" >NO Card</a>
+                                        <a target="_blank" ng-href="/adscoops/clients/newPaymentHash/{{ client.ID }}" class="btn btn-primary gp">Generate Payment Hash Link</a>
+                                    </div>
+									<div class="col-md-5" ng-show="client.StripeToken != ''">
+									<a class="btn btn-success nc" >Card On File</a>
+									</div>
+                                    
+                                
+                            </div>
+                            <div class="col-md-12 charg-trans" ng-show="client.ID > 0">
+                                <div class="charg-trans-head">
+                                    <div class="col-md-6">
+                                        <div class="cth-box">
+                                            <span class="ct-head">
+                                                <span>Charge Transactions</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <div class="cth-action">
+                                            <a class="btn btn-default manual" ui-sref="admin.adscoops.clients-edit.manual-charge">Manual Charge</a>
+                                            <a class="btn btn-success auto" ui-sref="admin.adscoops.clients-edit.auto-charge">Auto Charge</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="rwd-table custom-responsive ct">
+                                    <tr class="col-title">
+                                        <th class="srno">Amount Charged</th>
+                                        <th class="clname">Transaction ID</th>
+                                        <th class="action-cl">Date</th>
+
+                                    </tr>
+                                    <tr ng-repeat="t in client.Transactions">
+                                        <td data-th="Amount Charged" ng-bind="t.AmountCharged"></td>
+                                        <td data-th="Transaction ID" ng-bind="t.TransactionId"></td>
+                                        <td data-th="Date"><span class="ct-date" ng-bind="t.CreatedAt"></span><span class="ct-time"></span></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div class="col-md-12 charg-trans avl-cg" ng-controller="AdscoopClientAvailableCampaignGroupsCtrl">
+                                <div class="charg-trans-head">
+                                    <div class="col-md-6">
+                                        <div class="cth-box">
+                                            <span class="ct-head">
+                                                <span><i class="icon-available_groups2"></i>Available Campaign Groups</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <div class="cth-action">
+                                            <a class="btn btn-default adnew" ng-click="addCampaignGroup()">Add New Campaign Group<i class="icon-add_dark"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="rwd-table custom-responsive ct add-cam">
+                                    <tr class="col-title">
+                                        <th class="srno">Serial Number</th>
+                                        <th class="cg">Campaign Group</th>
+
+
+                                    </tr>
+                                    <tr ng-repeat="c in asscCampaignGroups">
+                                        <td data-th="Serial No." ng-bind="c.CampaignGroupID"></td>
+                                        <td data-th="Client Name" ng-bind="c.Name"></td>
+										<!-- <td>
+                                            <a ng-click="removeCampaignGroup($index)" class="btn btn-danger pull-right btn-xs">Remove</a>
+                                        </td> -->
+								</table>
+
+                            </div>
+                        </div>
+
+
+                        <!-- /.tab-content -->
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- /.content -->
+        </div>
+        
+    
+    <!-- ./wrapper -->
+    <!-- jQuery 2.2.3 -->
+    <!-- <script src="plugins/jQuery/jquery-2.2.3.min.js"></script> -->
+    <!-- jQuery UI 1.11.4 -->
+    <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script> -->
+    <!-- Bootstrap 3.3.6 -->
+    <!-- <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script> -->
+    <script>
+        $(document).ready(function () {
+            $('.sidebar-toggle.ham-cross').click(function () {
+                $(this).toggleClass('bg-magic', '');
+                $('span.nav-sticks').toggleClass('cross', '');
+            });
+
+
+            moveProgressBar();
+
+            $(window).resize(function () {
+                moveProgressBar();
+            });
+
+
+            function moveProgressBar() {
+                console.log("moveProgressBar");
+                var getPercent = ($('.progress-wrap').data('progress-percent') / 100);
+                var getProgressWrapWidth = $('.progress-wrap').width();
+                var progressTotal = getPercent * getProgressWrapWidth;
+                var animationLength = 2500;
+                $('.progress-bar').stop().animate({
+                    left: progressTotal
+                }, animationLength);
+            }
+        });
+    </script>
+
+</body>
+</html>

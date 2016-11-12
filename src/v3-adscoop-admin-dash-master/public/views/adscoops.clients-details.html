@@ -1,0 +1,284 @@
+﻿   <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper clearfix" ng-controller="AdscoopsDashboardCtrl">
+            <section class="content">
+                <div class="row-fluid clients cl-name text-center">
+                    <p ng-bind="client.Name"></p>
+                </div>
+                <div class="row-fluid client-info no-border">
+
+                    <div class="col-md-9 client-graphs">
+                        <div class="col-sm-6 col-md-3 c-bars pr_chart-blue" id="impressionsDataByClientCont{{ client.ID }}"><span id="impressionsDataByClient{{ client.ID }}"></span></div>
+                        <div class="col-sm-6 col-md-3 c-bars pr_chart_green" id="engagementsDataByClientCont{{ client.ID }}"><span id="engagementsDataByClient{{ client.ID }}"></span></div>
+                        <div class="col-sm-6 col-md-3 c-bars  pr_chart_yellow" id="loadsDataByClientCont{{ client.ID }}"><span id="loadsDataByClient{{ client.ID }}"></span></div>
+
+                    </div>
+                    <div class="col-md-3 c-actions"><i class="icon-view_small" ui-sref="admin.adscoops.clients-edit.viewcampaigns({id: client.ID })"></i><i class="icon-edit" ui-sref="admin.adscoops.clients-edit({id: client.ID })"></i></div>
+                </div>
+                <div class="row-fluid client-fingures">
+                    <div class="col-md-3 col-sm-6"><h4 class="go-head">Goal</h4><h3 class="go-nums">{{ client.RequiredImps | number:0 }}</h3></div>
+                    <div class="col-md-3 col-sm-6"><h4 class="go-head">Remaining</h4><h3 class="go-nums">{{ client.RequiredImps - client.ReceivedImps | number:0 }}</h3></div>
+                    <div class="col-md-3 col-sm-6"><h4 class="go-head">Today Spent</h4><h3 class="go-nums">${{ client.TodaySpend | number:2 }}</h3></div>
+                    <div class="col-md-3 col-sm-6"><h4 class="go-head">TOS</h4><h3 class="go-nums">{{ client.TOSAvg | number }}</h3></div>
+                </div>
+                <div class="row-fluid progress-cl">
+                    <div class="col-md-10 client-progress-bar">
+                        <div class="meter red nostripes narrow">
+                            <span class="pr_end pr_cliente" style="left:calc({{ (client.percentage) * 100  }}% - 0.55px)"> <span>{{ (client.percentage) * 100 | number:0 }}%</span></span>
+                            <span class="pr_animw" style="width:{{ (client.ReceivedImps / client.RequiredImps) * 100 }}%;"
+                                  ng-class="{ 'progress-bar-danger': ((client.ReceivedImps / client.RequiredImps) <= .2),
+                                      'progress-bar-warning': ((client.ReceivedImps / client.RequiredImps) > .2 && (client.ReceivedImps / client.RequiredImps) < .6),
+                                    'progress-bar-success': ((client.ReceivedImps / client.RequiredImps) > 1)}"
+
+                            ></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid edit-graphs">
+                    <div class="tab-pane">
+                        <!--<p class="editbyclk">Choose a Redirect to Edit by Clicking the Arrow<i class="icon-arrow_white_down"></i></p>-->
+                        <p class="editbyclk"  class="form-control">
+
+                            <select name="redirChooser" ng-change="redirectQuickEdit(clientRedirData['client_redir_chosen' + client.ID].ID, client.ID)" ng-model="clientRedirData['client_redir_chosen' + client.ID]" ng-options="r.Name for r in clientRedirData['client_redir_list_' + client.ID]" class="form-control">
+                            <option value="">Choose a Redirect to Edit by Clicking the Arrow</option>
+                        </select>
+
+                        </p>
+                        <canvas id="line_client_redir_{{ client.ID }}" class="chart chart-line chart-xl" chart-data="clientRedirData['client_redir_data_' + client.ID]" chart-series="clientRedirData['client_redir_labels_' + client.ID]"
+                                chart-legend="true"
+                                chart-labels='["","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]'  chart-options="options" chart-click="loadRedirSideview">
+
+                        </canvas>
+                    </div>
+                </div>
+                <form ng-submit="showReport(client)" class="form-inline">
+                    <div class="row-fluid amt-fig">
+                        <div class="col-md-12">
+
+                            <div class="time-range" >
+                                <ul class="amount-figures">
+                                    <li><p>Charge Amount :</p><span class="amt">${{ client.ChargeAmount | number:2 }}</span></li>
+                                    <li><p>Balance: :</p><span class="amt">${{ client.TotalSpent | number:2 }}</span></li>
+                                </ul>
+                                <p>Reports :</p>
+                                <div class="form-group lhs">
+                                    <label>Start Time</label>
+                                    <input name="start time" type="date"  ng-model="client.ReportStartDate" />
+                                </div>
+                                <div class="form-group rhs">
+                                    <label>End Time</label>
+                                    <input name="start time" type="date" ng-model="client.ReportEndDate"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid tab-bar">
+                        <div class="col-md-12">
+                            <div class="tab-container">
+
+                                <a ng-click="client.showReport = false" class="btn-tab" ng-show="client.showReport">Hide</a>
+                                <a href="javascript:void(0)" ng-click="downloadReport(client)"  class="btn-tab">Download CSV</a>
+                                <a href="javascript:void(0)" ng-click="setReportToToday(client)" class="btn-tab">Today</a>
+                                <a href="javascript:void(0)" ng-click="setReportToYesterday(client)" class="btn-tab">Yesterday</a>
+                                <a href="javascript:void(0)" ng-click="setReportToMTD(client)" class="btn-tab">MTD</a>
+                            </div>
+                            <textarea ng-show="client.showReport" ng-bind="client.reportOutput"  rows="20" style="white-space: pre;
+  word-wrap: normal;width:100%; max-height:400px; overflow:auto;font-family: monospace;"></textarea>
+                        </div>
+                    </div>
+                    </form>
+                    <div class="row-fluid vop">
+                        <div class="col-md-12">
+                            <div class="view-option">
+                                <form ng-submit="saveUserOptions(client)" class="form-inline">
+                                <p>Viewing Options :</p>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Campaign sort</label>
+                                        <!--<input type="text" name="campaignsort" />-->
+                                        <select name="CampaignSort" id="CampaignSort" ng-model="client.UserSettings.CampaignSort" class="form-control">
+                                            <option value="Paused">By Paused</option>
+                                            <option value="Stats.DailyImps / DailyImpsLimit">Campaigns Furthest To Completion</option>
+                                            <option value="(DailyImpsLimit / Stats.DailyImps)">Campaigns Nearest From Completion</option>
+                                        </select>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Client Order</label>
+                                        <input type="number" class="form-control" ng-model="client.UserSettings.ClientOrder" min="0" max="99999999999">
+
+
+                                    </div>
+                                </div>
+                                <div class="update text-right"><input type="submit" value="Update" class="form-control btn-update"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid imp-actions"  ng-repeat="cpn in client.Campaigns | orderBy: client.UserSettings.CampaignSort">
+                        <div class="ttip">
+                            <div class="col-md-3">
+                               <p><a ui-sref="admin.adscoops.clients-edit.viewcampaigns.edit({id: client.ID, campaignid: cpn.ID})" class="prCname" ng-bind="cpn.Name"></a></p>
+                                <p><strong>${{ cpn.Stats.DailyRevenue | number:2 }}</strong></p>
+                            </div>
+                            <div class="col-md-7 half-grid-sec">
+                                <div class="form-group">
+                                       <input type="text" name="imps" ng-model="client.editCampaigns[cpn.ID].DailyImpsLimit" ng-blur="showInfo(client, client.editCampaigns[cpn.ID]);" />
+                                    <span class="imps">imps</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="cpc" ng-model="client.editCampaigns[cpn.ID].Cpc" ng-blur="showInfo(client, client.editCampaigns[cpn.ID]);" id="cpnCpc{{ cpn.ID }}" />
+                                    <span class="imps">CPC</span>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">
+                                <div class="pause">
+                                    <i class="icon-pause"></i>
+                                </div>
+                                <div class="custom-switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+                                        <label class="onoffswitch-label" for="myonoffswitch1">
+                                            <span class="onoffswitch-inner" ng-model="client.editCampaigns[cpn.ID].Paused" ng-true-value="false" ng-false-value="true" ng-click="showInfo(client, client.editCampaigns[cpn.ID]);"></span>
+                                            <span class="onoffswitch-switch" ng-model="client.editCampaigns[cpn.ID].Paused" ng-true-value="false" ng-false-value="true" ng-click="showInfo(client, client.editCampaigns[cpn.ID]);"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ttip-prog-bar">
+                            <p class="iff-figures"><span="get-mark">{{ cpn.Stats.DailyImps | number }} of {{ cpn.DailyImpsLimit | number }}</span><span ng-show="cpn.TrackingMethod == 0"> Impressions</span><span ng-show="cpn.TrackingMethod == 1"> Verifications</span><span ng-show="cpn.TrackingMethod == 2"> Loads</span></p>
+                            <div class="meter red nostripes narrow">
+                                <span class="pr_end pr_cliente" style="width: {{ (cpn.Stats.DailyImps / (cpn.DailyImpsLimit + 1)) * 100 }}%" ng-class="{ 'progress-bar-danger': ((cpn.Stats.DailyImps / (cpn.DailyImpsLimit + 1)) <= .2),
+                                      'progress-bar-warning': ((cpn.Stats.DailyImps / (cpn.DailyImpsLimit + 1)) > .2 && (cpn.Stats.DailyImps / (cpn.DailyImpsLimit + 1)) < .6),
+                                    'progress-bar-success': ((cpn.Stats.DailyImps / (cpn.DailyImpsLimit + 1)) > 1)}">
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row-fluid imp-actions">
+                        <div class="ttip">
+                            <div class="col-md-3">
+                                <p>Tout -Time Inc- People</p>
+                                <p><strong>$321.5</strong></p>
+                            </div>
+                            <div class="col-md-7 half-grid-sec">
+                                <div class="form-group">
+                                    <input type="text" name="imps" />
+                                    <span class="imps">imps</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="cpc" />
+                                    <span class="imps">CPC</span>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">
+                                <div class="pause">
+                                    <i class="icon-pause"></i>
+                                </div>
+                                <div class="custom-switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
+                                        <label class="onoffswitch-label" for="myonoffswitch2">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ttip-prog-bar">
+                            <p class="iff-figures"><span ="get-mark">546645</span> of <span class="max-mark">700000</span> verifications</p>
+                            <div class="meter red nostripes">
+                                <span style="width: 33.3%"></span>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!--<div class="row-fluid imp-actions">
+                        <div class="ttip">
+                            <div class="col-md-3">
+                                <p>Tout -Time Inc- People</p>
+                                <p><strong>$321.5</strong></p>
+                            </div>
+                            <div class="col-md-7 half-grid-sec">
+                                <div class="form-group">
+                                    <input type="text" name="imps" />
+                                    <span class="imps">imps</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="cpc" />
+                                    <span class="imps">CPC</span>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">
+                                <div class="pause">
+                                    <i class="icon-pause"></i>
+                                </div>
+                                <div class="custom-switch">
+                                    <div class="onoffswitch">
+                                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3" checked>
+                                        <label class="onoffswitch-label" for="myonoffswitch3">
+                                            <span class="onoffswitch-inner"></span>
+                                            <span class="onoffswitch-switch"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ttip-prog-bar">
+                            <p class="iff-figures"><span ="get-mark">546645</span> of <span class="max-mark">700000</span> verifications</p>
+
+
+                                <div class="meter yellow nostripes">
+                                    <span style="width: 33.3%"></span>
+                                </div>
+
+                        </div>
+                    </div>-->
+                </form>
+
+
+            </section>
+
+            <!-- /.content -->
+        </div>
+
+    <!-- ./wrapper -->
+    <!-- jQuery 2.2.3 -->
+   <!-- <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    &lt;!&ndash; jQuery UI 1.11.4 &ndash;&gt;
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!--<script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    &lt;!&ndash; Bootstrap 3.3.6 &ndash;&gt;
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/app.min.js"></script>-->
+    <script>
+        $(document).ready(function () {
+            $('.sidebar-toggle.ham-cross').click(function () {
+                $(this).toggleClass('bg-magic', '');
+                $('span.nav-sticks').toggleClass('cross', '');
+            });
+            $(function () {
+               /* $(".meter > span").each(function () {
+                    $(this)
+                        .data("origWidth", $(this).width())
+                        .width(0)
+                        .animate({
+                            width: $(this).data("origWidth")
+                        }, 1200);
+                });*/
+            });
+        });
+    </script>
+
+

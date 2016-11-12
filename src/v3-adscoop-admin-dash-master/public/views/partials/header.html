@@ -1,0 +1,98 @@
+<header class="main-header" ng-controller="AdscoopsDashboardCtrl">
+    <nav class="navbar navbar-static-top">
+        <div class="go-logo">
+           <p class="text-logo">Adscoops</p>
+        </div>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- Notifications: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle pr_name" data-toggle="dropdown">
+                        <img src="{{AvatarURL}}" class="user-image" alt="User Image">
+                        <span class="hidden-xs ">{{UserName}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="{{AvatarURL}}" class="img-circle" alt="User Image">
+                            <p class="pr_name">
+                                {{Email}}
+                                <small></small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+						
+                        <!-- <li class="user-body">
+                            <div class="row">
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Followers</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Sales</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Friends</a>
+                                </div>
+                            </div>
+                            
+                        </li> -->
+						
+						
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                           <!--  <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div> -->
+                            <div class="pr_center">
+                                <a href="/auth/logout" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle pr_name" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="label label-warning">{{ messages.length}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">You have {{ messages.length}} notifications</li>
+                        <li>
+                            <!-- inner menu: contains the actual data -->
+                            <ul class="menu">
+                                <li ng-repeat="message in messages">
+									<a href="#">
+                                        <i></i> {{ message.title }}
+                                        <!-- <div class="fa fa-users text-aqua"><span>{{ message.message }}</span></div> -->
+									</a>
+                                </li>
+                               <!-- <li>
+                                    <a href="#">
+                                        <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                        page and may cause design problems
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-users text-red"></i> 5 new members joined
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-user text-red"></i> You changed your username
+                                    </a>
+                                </li>-->
+                            </ul>
+                        </li>
+                        <!--<li class="footer"><a href="#">View all</a></li>-->
+                    </ul>
+                </li>
+                <!-- Control Sidebar Toggle Button -->
+            </ul>
+        </div>
+    </nav>
+</header>

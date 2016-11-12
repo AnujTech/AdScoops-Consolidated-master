@@ -1,0 +1,233 @@
+{
+	"ImportPath": "v3-adscoop-admin-dash-master",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v75",
+	"Deps": [
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.11.0-5-gabc6f20",
+			"Rev": "abc6f20dabf4b10195f233ad21ea6c5ba33acae0"
+		},
+		{
+			"ImportPath": "github.com/boj/redistore",
+			"Comment": "v1.2",
+			"Rev": "fc113767cd6b051980f260d6dbe84b2740c46ab0"
+		},
+		{
+			"ImportPath": "github.com/bradhe/stopwatch",
+			"Rev": "857217349ee6cdfefae308dd33d15192cdcb8126"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/internal",
+			"Comment": "v1.0.0-6-g80f7de3",
+			"Rev": "80f7de34463b0ed3d7c61303e5619efe1b227f92"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/redis",
+			"Comment": "v1.0.0-6-g80f7de3",
+			"Rev": "80f7de34463b0ed3d7c61303e5619efe1b227f92"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/contrib/sessions",
+			"Rev": "cf28f84316e50a05a59d174b37c26ad9a43a1201"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin",
+			"Comment": "v1.0-4-gbb159f9",
+			"Rev": "bb159f9260a262fccbdbd6f37f8575d1e7e6aaa0"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin/binding",
+			"Comment": "v1.0-4-gbb159f9",
+			"Rev": "bb159f9260a262fccbdbd6f37f8575d1e7e6aaa0"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin/render",
+			"Comment": "v1.0-4-gbb159f9",
+			"Rev": "bb159f9260a262fccbdbd6f37f8575d1e7e6aaa0"
+		},
+		{
+			"ImportPath": "github.com/go-sql-driver/mysql",
+			"Comment": "v1.2-212-g8f6c67f",
+			"Rev": "8f6c67f0228a4a6a962008d6c3d1e694e4532e71"
+		},
+		{
+			"ImportPath": "github.com/golang/protobuf/proto",
+			"Rev": "4bd1920723d7b7c925de087aa32e2187708897f7"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Comment": "v1.1-7-g08b5f42",
+			"Rev": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.1-27-g757bef9",
+			"Rev": "757bef944d0f21880861c2dd9c871ca543023cba"
+		},
+		{
+			"ImportPath": "github.com/gorilla/securecookie",
+			"Comment": "v1.1-5-gfa5329f",
+			"Rev": "fa5329f913702981df43dcb2a380bac429c810b5"
+		},
+		{
+			"ImportPath": "github.com/gorilla/sessions",
+			"Comment": "v1.1",
+			"Rev": "ca9ada44574153444b00d3fd9c8559e4cc95f896"
+		},
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Comment": "v1.0.0-39-ge8f0f8a",
+			"Rev": "e8f0f8aaa98dfb6586cbdf2978d511e3199a960a"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Comment": "v1.0-96-g066abce",
+			"Rev": "066abcef408f2522f0a89952e44ab17eac176ed0"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/inflection",
+			"Rev": "74387dc39a75e970e7a3ae6a3386b5bd2e5c5cff"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/now",
+			"Rev": "d9861969c7a7e84746d341c09020c2ef8a617f8f"
+		},
+		{
+			"ImportPath": "github.com/mailgun/mailgun-go",
+			"Comment": "v1.0.2",
+			"Rev": "369a1fa57ce6fb314e627087b9fff0db5c266c0f"
+		},
+		{
+			"ImportPath": "github.com/manucorporat/sse",
+			"Rev": "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d"
+		},
+		{
+			"ImportPath": "github.com/markbates/goth",
+			"Rev": "fe9a7e293372a2839c9e9eb3bbb48bb977f2cfa8"
+		},
+		{
+			"ImportPath": "github.com/markbates/goth/gothic",
+			"Rev": "fe9a7e293372a2839c9e9eb3bbb48bb977f2cfa8"
+		},
+		{
+			"ImportPath": "github.com/markbates/goth/providers/gplus",
+			"Rev": "fe9a7e293372a2839c9e9eb3bbb48bb977f2cfa8"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-runewidth",
+			"Comment": "v0.0.1-10-g737072b",
+			"Rev": "737072b4e32b7a5018b4a7125da8d12de90e8045"
+		},
+		{
+			"ImportPath": "github.com/olekukonko/tablewriter",
+			"Rev": "bdcc175572fd7abece6c831e643891b9331bc9e7"
+		},
+		{
+			"ImportPath": "github.com/patrickmn/go-cache",
+			"Comment": "v2.0.0",
+			"Rev": "1881a9bccb818787f68c52bfba648c6cf34c34fa"
+		},
+		{
+			"ImportPath": "github.com/stripe/stripe-go",
+			"Comment": "v18.10.0",
+			"Rev": "e6f8840b669c4027f15720eac6d50a04d31eee76"
+		},
+		{
+			"ImportPath": "github.com/stripe/stripe-go/charge",
+			"Comment": "v18.10.0",
+			"Rev": "e6f8840b669c4027f15720eac6d50a04d31eee76"
+		},
+		{
+			"ImportPath": "github.com/stripe/stripe-go/customer",
+			"Comment": "v18.10.0",
+			"Rev": "e6f8840b669c4027f15720eac6d50a04d31eee76"
+		},
+		{
+			"ImportPath": "github.com/stripe/stripe-go/orderitem",
+			"Comment": "v18.10.0",
+			"Rev": "e6f8840b669c4027f15720eac6d50a04d31eee76"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/adonnetwork",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/adscoops.caches",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/api.controllers",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/billing",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/configSettting",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/emailer",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/frontend.controllers",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/helpers",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/payment.controllers",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/shared-structs/structs",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/sockets",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/swhitley101/AdScoops-Consolidated/src/v3-adscoop-admin-dash-master/app/structs",
+			"Rev": "e291274ee751868782869c26f4559bdc961a9f2e"
+		},
+		{
+			"ImportPath": "github.com/unrolled/render",
+			"Rev": "526faf80cd4b305bb8134abea8d20d5ced74faa6"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "0e2717dc3cc05907dc23096ef3a9086ea93f567f"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2",
+			"Rev": "d5040cddfc0da40b408c9a1da4728662435176a9"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/internal",
+			"Rev": "d5040cddfc0da40b408c9a1da4728662435176a9"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "b699b7032584f0953262cb2788a0ca19bb494703"
+		},
+		{
+			"ImportPath": "gopkg.in/go-playground/validator.v8",
+			"Comment": "v8.18.1",
+			"Rev": "5f57d2222ad794d0dffb07e664ea05e2ee07d60c"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Rev": "a5b47d31c556af34a302ce5d659e6fea44d90de0"
+		}
+	]
+}
