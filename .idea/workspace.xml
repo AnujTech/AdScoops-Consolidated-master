@@ -31,7 +31,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/golang.org/x/oauth2" afterPath="$PROJECT_DIR$/src/golang.org/x/oauth2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gopkg.in/go-playground/validator.v8" afterPath="$PROJECT_DIR$/src/gopkg.in/go-playground/validator.v8" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gopkg.in/yaml.v2" afterPath="$PROJECT_DIR$/src/gopkg.in/yaml.v2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="v3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -403,7 +402,7 @@
       <workItem from="1478894760694" duration="528000" />
       <workItem from="1478972425298" duration="4025000" />
       <workItem from="1478978685623" duration="1378000" />
-      <workItem from="1478991839860" duration="539000" />
+      <workItem from="1478991839860" duration="589000" />
     </task>
     <task id="LOCAL-00001" summary="hh">
       <created>1476705815749</created>
@@ -416,7 +415,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34949000" />
+    <option name="totallyTimeSpent" value="34999000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
